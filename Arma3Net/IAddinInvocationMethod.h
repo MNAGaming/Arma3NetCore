@@ -16,7 +16,7 @@
 
 #pragma once
 
-namespace Arma2Net
+namespace Arma3Net
 {
 	public interface class IAddinInvocationMethod
 	{

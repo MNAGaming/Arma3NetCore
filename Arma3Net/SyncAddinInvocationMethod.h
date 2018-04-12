@@ -18,7 +18,7 @@
 
 #include "Addin.h"
 
-namespace Arma2Net
+namespace Arma3Net
 {
 	public ref class SyncAddinInvocationMethod : public IAddinInvocationMethod
 	{

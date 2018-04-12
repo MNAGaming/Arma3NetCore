@@ -1,4 +1,4 @@
-﻿using Arma2Net;
+﻿using Arma3Net;
 using System;
 
 namespace PersistentCampaign2Addin
@@ -38,7 +38,7 @@ namespace PersistentCampaign2Addin
                 if (string.IsNullOrWhiteSpace(args))
                     return "ERROR_ARGS_NULL";
 #if(DEBUG)
-                Arma2Net.Utils.Log(args);
+                Utils.Log(args);
 #endif
 
                 // Argumente zerlegen

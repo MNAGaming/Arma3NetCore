@@ -1,18 +1,4 @@
-/*
-* Copyright 2013 Arma2NET Developers
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+
 
 #include <Windows.h>
 #include <msclr\marshal.h>
@@ -26,7 +12,7 @@ using namespace System::IO;
 using namespace System::Reflection;
 using namespace System::Text;
 
-namespace Arma2Net
+namespace Arma3Net
 {
 	Assembly^ Bridge::ResolveAssembly(Object^ sender, ResolveEventArgs^ e)
 	{
@@ -74,7 +60,7 @@ namespace Arma2Net
 
 	Bridge::Bridge(void)
 	{
-		Utils::Log("Arma2NET initializing on CLR {0}", Environment::Version);
+		Utils::Log("Arma3NET initializing on CLR {0}", Environment::Version);
 		assemblyCache = gcnew Dictionary<String^, Assembly^>();
 		AppDomain::CurrentDomain->AssemblyResolve += gcnew ResolveEventHandler(ResolveAssembly);
 		AppDomain::CurrentDomain->UnhandledException += gcnew UnhandledExceptionEventHandler(LogUnhandledException);
