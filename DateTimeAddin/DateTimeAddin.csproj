@@ -2,14 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>\bin\debug</OutputPath>
+    <OutputPath>bin\debug\netcoreapp2.0\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutputPath>bin\debug\netcoreapp2.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Arma3Net\Arma3Net.vcxproj" />
+    <Compile Remove="nppBackup\**" />
+    <EmbeddedResource Remove="nppBackup\**" />
+    <None Remove="nppBackup\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Arma3Net\Arma3Net.vcxproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(SolutionDir)$(Configuration)\@Arma3NET\Addins\&quot; mkdir &quot;$(SolutionDir)$(Configuration)\@Arma3NET\Addins\&quot;&#xD;&#xA;XCopy &quot;$(TargetDir)*.*&quot;  &quot;$(SolutionDir)$(Configuration)\@Arma3NET\Addins\$(ProjectName)\&quot; /Y /R" />
+  </Target>
 
 </Project>

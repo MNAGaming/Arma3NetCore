@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using Arma2Net;
+using Arma3Net;
 using SDateTime = System.DateTime;
 
 namespace DateTimeAddin

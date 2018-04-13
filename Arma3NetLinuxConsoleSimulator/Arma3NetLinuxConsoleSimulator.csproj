@@ -3,6 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(SolutionDir)$(Configuration)\@Arma3NET\Addins\&quot; mkdir &quot;$(SolutionDir)$(Configuration)\@Arma3NET\Addins\&quot;&#xD;&#xA;XCopy &quot;$(TargetDir)*.*&quot;  &quot;$(SolutionDir)$(Configuration)\@Arma3NET\Addins\$(ProjectName)\&quot; /Y /R" />
+  </Target>
 
 </Project>

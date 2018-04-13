@@ -20,9 +20,9 @@ namespace Arma3Net
 	{
 		BaseDirectory = Path::GetDirectoryName(Assembly::GetExecutingAssembly()->Location);
 		AddinDirectory = Path::Combine(BaseDirectory, "Addins");
-		LogDirectory = Path::GetDirectoryName(Assembly::GetExecutingAssembly()->Location); //Path::Combine(Environment::GetFolderPath(Environment::SpecialFolder::LocalApplicationData), "Arma2NET");
+		LogDirectory = Path::GetDirectoryName(Assembly::GetExecutingAssembly()->Location); //Path::Combine(Environment::GetFolderPath(Environment::SpecialFolder::LocalApplicationData), "Arma3NET");
 		//Directory::CreateDirectory(Utils::LogDirectory);
-		logWriter = gcnew StreamWriter(Path::Combine(Utils::LogDirectory, "Arma2NET.log"), true);
+		logWriter = gcnew StreamWriter(Path::Combine(Utils::LogDirectory, "Arma3NET.log"), true);
 	}
 
 	void Utils::Log(String^ format, ... array<Object^>^ args)

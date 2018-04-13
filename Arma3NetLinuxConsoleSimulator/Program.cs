@@ -6,7 +6,7 @@ namespace Arma3NetLinuxConsoleSimulator
 {
     class Program
     {
-        [DllImport("Arma3Net.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"..\..\Arma3Net.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void RVExtension(StringBuilder output, int outputSize, string function);
 
 

@@ -1,4 +1,4 @@
-﻿using Arma2Net;
+﻿using Arma3Net;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +12,7 @@ namespace ExerciseStatisticAddin
         {
 
             string concatenatedText = category + ";" + exercise + ";" + username + ";" + userid + ";" + score.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-            Arma2Net.Utils.Log("ExerciseStatisticAddin: " + concatenatedText);
+            Utils.Log("ExerciseStatisticAddin: " + concatenatedText);
 
             int limit = 1000;
             while (limit > 0)

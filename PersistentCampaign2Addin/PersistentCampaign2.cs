@@ -49,7 +49,7 @@ namespace PersistentCampaign2Addin
                 }
                 catch (Exception ex)
                 {
-                    Arma2Net.Utils.Log("Exception: " + ex.Message);
+                    Utils.Log("Exception: " + ex.Message);
                     return "ERROR_SPLIT_EXCEPTION";
                 }
 

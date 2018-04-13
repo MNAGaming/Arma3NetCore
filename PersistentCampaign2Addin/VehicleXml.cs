@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Arma3Net;
 
 namespace PersistentCampaign2Addin
 {
@@ -58,7 +59,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Vehicle.Read failed: " + ex.Message);
+                        Utils.Log("ERROR: Vehicle.Read failed: " + ex.Message);
                         return "ERROR_VEHICLE_READ_EXCEPTION: " + ex.Message;
                     }
                     #endregion
@@ -73,7 +74,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Vehicle.BeginWrite failed: " + ex.Message);
+                        Utils.Log("ERROR: Vehicle.BeginWrite failed: " + ex.Message);
                         return "ERROR_VEHICLE_BEGINWRITE_EXCEPTION";
                     }
                     #endregion
@@ -98,7 +99,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Vehicle.Write failed: " + ex.Message);
+                        Utils.Log("ERROR: Vehicle.Write failed: " + ex.Message);
                         return "ERROR_VEHICLE_WRITE_EXCEPTION:" + ex.Message;
                     }
                     #endregion
@@ -116,7 +117,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Vehicle.EndWrite failed: " + ex.Message);
+                        Utils.Log("ERROR: Vehicle.EndWrite failed: " + ex.Message);
                         return "ERROR_VEHICLE_ENDWRITE_EXCEPTION";
                     }
                     #endregion
@@ -126,7 +127,7 @@ namespace PersistentCampaign2Addin
             }
             catch (Exception ex)
             {
-                Arma2Net.Utils.Log("ERROR: Vehicle-Exception: " + ex.Message);
+                Utils.Log("ERROR: Vehicle-Exception: " + ex.Message);
                 return "ERROR_VEHICLE_EXCEPTION";
             }
         }

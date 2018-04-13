@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using Arma3Net;
 
 namespace PersistentCampaign2Addin
 {
@@ -47,7 +48,7 @@ namespace PersistentCampaign2Addin
             Town newTown = new Town();
             newTown.Name = name.ToLower();
 
-            Arma2Net.Utils.Log("New town added: " + name);
+            Utils.Log("New town added: " + name);
 
             if (Towns == null)
                 Towns = new Town[0];
@@ -93,7 +94,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Town.Load failed: " + ex.Message);
+                        Utils.Log("ERROR: Town.Load failed: " + ex.Message);
                         return "ERROR_TOWN_LOAD_EXCEPTION";
                     }
                     #endregion
@@ -111,7 +112,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Town.Update failed: " + ex.Message);
+                        Utils.Log("ERROR: Town.Update failed: " + ex.Message);
                         return "ERROR_TOWN_UPDATE_EXCEPTION";
                     }
                     #endregion
@@ -127,7 +128,7 @@ namespace PersistentCampaign2Addin
                     }
                     catch (Exception ex)
                     {
-                        Arma2Net.Utils.Log("ERROR: Town.Save failed: " + ex.Message);
+                        Utils.Log("ERROR: Town.Save failed: " + ex.Message);
                         return "ERROR_TOWN_SAVE_EXCEPTION";
                     }
                     #endregion
@@ -137,7 +138,7 @@ namespace PersistentCampaign2Addin
             }
             catch (Exception ex)
             {
-                Arma2Net.Utils.Log("ERROR: Town-Exception: " + ex.Message);
+                Utils.Log("ERROR: Town-Exception: " + ex.Message);
                 return "ERROR_TOWN_EXCEPTION";
             }
         }
